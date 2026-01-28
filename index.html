@@ -1,1 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Vista — Rooms</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fdfcf9;
+            --text-dark: #1a1a1a;
+            --accent: #b5935a;
+            --border: #e8e4df;
+        }
 
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Заголовок страницы */
+        .hero {
+            padding: 100px 20px 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 400;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+
+        /* Сетка */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px 100px;
+        }
+
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Две колонки как в десктоп-версии */
+            gap: 40px;
+        }
+
+        /* Карточка номера */
+        .room-card {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            group: hover;
+        }
+
+        .image-wrapper {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .room-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .room-info {
+            padding: 24px 0;
+        }
+
+        .category {
+            font-size: 12px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+        }
+
+        .room-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .price {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .price span {
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* Адаптивность для мобильных */
+        @media (max-width: 850px) {
+            .rooms-grid {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 0 20px 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>Our Rooms</h1>
+    </section>
+
+    <main class="container">
+        <div class="rooms-grid">
+            
+            <a href="#" class="room-card">
+                <div class="image-wrapper">
+                    <img src="https://framerusercontent.com/images/7p3g8Gk2jB6AAt1N6z2V6I6Q8.jpg" alt="Bellavista Premier">
+                </div>
+                <div class="room-info">
+                    <div class="category">Luxury Suite</div>
+                    <div class="title-row">
+                        <h2 class="room-title">Bellavista Premier</h2>
+                        <div class="price">$899 <span>/ Week</span></div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="room-card">
+                <div class="image-wrapper">
+                    <img src="https://framerusercontent.com/images/3m6T0Rj8S2pGvYt0Z1HnQk8M.jpg" alt="Garden View">
+                </div>
+                <div class="room-info">
+                    <div class="category">Classic</div>
+                    <div class="title-row">
+                        <h2 class="room-title">Garden View</h2>
+                        <div class="price">$550 <span>/ Week</span></div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="room-card">
+                <div class="image-wrapper">
+                    <img src="https://framerusercontent.com/images/6A8k7S2nJ4V2T6B8M0Q1R9L.jpg" alt="Ocean Breeze">
+                </div>
+                <div class="room-info">
+                    <div class="category">Deluxe</div>
+                    <div class="title-row">
+                        <h2 class="room-title">Ocean Breeze</h2>
+                        <div class="price">$720 <span>/ Week</span></div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="room-card">
+                <div class="image-wrapper">
+                    <img src="https://framerusercontent.com/images/2V6I6Q8M0L1R9S4nJ7A2B6C.jpg" alt="Skyline Suite">
+                </div>
+                <div class="room-info">
+                    <div class="category">Penthouse</div>
+                    <div class="title-row">
+                        <h2 class="room-title">Skyline Suite</h2>
+                        <div class="price">$1,200 <span>/ Week</span></div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+</body>
+</html>
